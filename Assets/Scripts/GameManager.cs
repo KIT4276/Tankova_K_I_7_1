@@ -29,7 +29,7 @@ namespace Runner
         void Awake()
         {
             Self = this;
-            _levelsLength = 1024 * 1024;
+            _levelsLength = 1024 * 1024;// посчитаем сразу, чтобы не делать это при каждом вызове UpdateLevel
         }
 
         private void Update()
