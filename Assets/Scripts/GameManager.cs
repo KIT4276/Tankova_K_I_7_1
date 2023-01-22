@@ -11,9 +11,8 @@ namespace Runner
         private float _step = 6f;
         private int _currentIndex = 0;
         private float _lastZ = 30f;
-        private int _levelsLength = 1024 * 1024;
+        private int _levelsLength;
 
-        private int _stepLength = 1024;
         private Vector3 position;
 
         [SerializeField, Range(1, 100), Tooltip("Это здоровье игрока, не перепутай")]
@@ -28,7 +27,10 @@ namespace Runner
         public static GameManager Self { get; private set; }
 
         void Awake()
-            => Self = this;
+        {
+            Self = this;
+            _levelsLength = 1024 * 1024;
+        }
 
         private void Update()
 		{
